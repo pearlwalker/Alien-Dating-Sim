@@ -21,10 +21,40 @@ namespace AlienDatingSim
         // Array of LoveData objects
         private LoveData[] loveDataArray = new LoveData[]
         {   //just a mockUp
+            /*
             new LoveData("Mars", new string[] { "Zorblatt", "Xanthe" }, new string[] { "ZorblattImageLink", "XantheImageLink", "MarsImageLink" }, 1),
             new LoveData("Venus", new string[] { "Gravlox", "Glaxor" }, new string[] { "GravloxImageLink", "GlaxorImageLink", "VenusImageLink" }, 2),
             new LoveData("Earth", new string[] { "Luna", "Klara" }, new string[] { "LunaImageLink", "KlaraImageLink", "EarthImageLink" }, 3),
             new LoveData("Jupiter", new string[] { "Ogar", "Zelda" }, new string[] { "OgarImageLink", "ZeldaImageLink", "JupiterImageLink" }, 4)
+            */
+            new LoveData("100", new string[] { "meida/alien_100.png"}, new string[] { "Mercury", "Venus" },
+                new string[] { 
+                    "bleh bleh i have a hundred eyes",
+                    "grrr.. go away you stink",
+                    "do you think im funny?",
+                    "who knew someone with so few eyes could still into my heart~ <3 "},
+                 new string[]
+                {
+                    "responce 1",
+                    "responce 2",
+                    "responce 3",
+                    "responce 4"
+                }
+                )/*alien 1*/,
+                       new LoveData("100", new string[] { "meida/alien_100.png"}, new string[] { "Mercury", "Venus" },
+                new string[] {
+                    "dialouge 1",
+                    "dialouge 2",
+                    "dialouge 3",
+                    "dialouge 4 "} , 
+                new string[]
+                {
+                    "responce 1",
+                    "responce 2",
+                    "responce 3",
+                    "responce 4"
+                }
+                )/*alien 2*/
         };
 
         // Constructor for the Form
@@ -38,15 +68,15 @@ namespace AlienDatingSim
         // TreeNode class to represent the structure of the game
         class TreeNode
         {
-            public string QuestionOrAnswer { get; set; }
+            public string GivenData { get; set; }
             public TreeNode Path1 { get; set; }
             public TreeNode Path2 { get; set; }
             public TreeNode Path3 { get; set; }
             public TreeNode Path4 { get; set; }
 
-            public TreeNode(string questionOrAnswer)
+            public TreeNode(string givenData)
             {
-                QuestionOrAnswer = questionOrAnswer;
+                GivenData = givenData;
                 Path1 = null;
                 Path2 = null;
                 Path3 = null;
@@ -66,13 +96,13 @@ namespace AlienDatingSim
             root.Path4 = new TreeNode("Node 4");
 
             // Define further branching from Path1
-            root.Path1.Path1 = new TreeNode("Node 1.1");
+            root.Path1.Path1 = new TreeNode("Node 1.1" + loveDataArray[1]);
             root.Path1.Path2 = new TreeNode("Node 1.2");
             root.Path1.Path3 = new TreeNode("Node 1.3");
             root.Path1.Path4 = new TreeNode("Node 1.4");
 
             // Add additional branching under Node 1.1
-            root.Path1.Path1.Path1 = new TreeNode("Node 1.1.1");
+            root.Path1.Path1.Path1 = new TreeNode("Node 1.1.1" );
             root.Path1.Path1.Path2 = new TreeNode("Node 1.1.2");
             root.Path1.Path1.Path3 = new TreeNode("Node 1.1.3");
             root.Path1.Path1.Path4 = new TreeNode("Node 1.1.4");
@@ -193,7 +223,7 @@ namespace AlienDatingSim
             isEndGame = false; // Reset the end game flag
 
             btnStartGame.Visible = false; // Hide start button
-            lblTextBox.Text = $"Node: {currentNode.QuestionOrAnswer}"; // Show the first node
+            lblTextBox.Text = $"Node: {currentNode.GivenData}"; // Show the first node
 
             // Show the options (buttons)
             UpdateButtonText();
@@ -210,10 +240,10 @@ namespace AlienDatingSim
         // Update button text based on current node
         private void UpdateButtonText()
         {
-            btnOption1.Text = currentNode.Path1?.QuestionOrAnswer ?? "No Path";
-            btnOption2.Text = currentNode.Path2?.QuestionOrAnswer ?? "No Path";
-            btnOption3.Text = currentNode.Path3?.QuestionOrAnswer ?? "No Path";
-            btnOption4.Text = currentNode.Path4?.QuestionOrAnswer ?? "No Path";
+            btnOption1.Text = currentNode.Path1?.GivenData ?? "No Path";
+            btnOption2.Text = currentNode.Path2?.GivenData ?? "No Path";
+            btnOption3.Text = currentNode.Path3?.GivenData ?? "No Path";
+            btnOption4.Text = currentNode.Path4?.GivenData ?? "No Path";
         }
 
         // Button click event for Path 1 response
@@ -232,7 +262,8 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.QuestionOrAnswer}. Game Over!");
+
+                    EndGame($"You reached: {currentNode.GivenData}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -254,7 +285,7 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.QuestionOrAnswer}. Game Over!");
+                    EndGame($"You reached: {currentNode.GivenData}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -276,7 +307,7 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.QuestionOrAnswer}. Game Over!");
+                    EndGame($"You reached: {currentNode.GivenData}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -298,7 +329,7 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.QuestionOrAnswer}. Game Over!");
+                    EndGame($"You reached: {currentNode.GivenData}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -307,7 +338,7 @@ namespace AlienDatingSim
         // Handle the final end game response (no more "correct/incorrect" prompts)
         private void HandleEndGame()
         {
-            lblTextBox.Text = $"Game Over! You reached: {currentNode.QuestionOrAnswer}";
+            lblTextBox.Text = $"Game Over! You reached: {currentNode.GivenData}";
 
             // Hide the option buttons at the end of the game
             ShowAnswerButtons(false);
@@ -329,7 +360,7 @@ namespace AlienDatingSim
         private void PlayGame()
         {
             // Show the current node's position and text
-            lblTextBox.Text = $"Node: {currentNode.QuestionOrAnswer}";
+            lblTextBox.Text = $"Node: {currentNode.GivenData}";
 
             // Update the button text to reflect the next node choices
             UpdateButtonText();
@@ -337,7 +368,7 @@ namespace AlienDatingSim
             if (currentNode.Path1 == null && currentNode.Path2 == null && currentNode.Path3 == null && currentNode.Path4 == null)
             {
                 // If at a leaf node, game ends
-                EndGame($"You reached: {currentNode.QuestionOrAnswer}. Game Over!");
+                EndGame($"You reached: {currentNode.GivenData}. Game Over!");
                 isEndGame = true; // Set the game to end
             }
         }
@@ -372,17 +403,27 @@ namespace AlienDatingSim
     // LoveData class with the specified properties
     public class LoveData
     {
-        public string Planet { get; set; }
-        public string[] Aliens { get; set; }
-        public string[] ImageLinks { get; set; }
-        public int Value { get; set; }
+        public string Name { get; set; }
+        public string[] Dialouges { get; set; }
 
-        public LoveData(string planet, string[] aliens, string[] imageLinks, int value)
+        public string[] Responces { get; set; }
+        public string[] ImageLinks { get; set; }
+        public string[] PlanetsTheyCanBeOn { get; set; }
+
+        //public int Value { get; set; }
+
+        public LoveData(string name, string[] imageLinks, string[] planetsTheyCanBeOn, string[] dialouges, string[] responces)
         {
-            Planet = planet;
-            Aliens = aliens;
+            /* Planet = planet;
+             Aliens = aliens;
+             ImageLinks = imageLinks;
+             Value = value;*/
+            Name = name;
             ImageLinks = imageLinks;
-            Value = value;
+            PlanetsTheyCanBeOn = planetsTheyCanBeOn;
+            Dialouges = dialouges;
+            Responces = responces;
+
         }
     }//end of Public class  LoveData
 
