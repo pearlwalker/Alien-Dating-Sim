@@ -27,12 +27,15 @@ namespace AlienDatingSim
             new LoveData("Earth", new string[] { "Luna", "Klara" }, new string[] { "LunaImageLink", "KlaraImageLink", "EarthImageLink" }, 3),
             new LoveData("Jupiter", new string[] { "Ogar", "Zelda" }, new string[] { "OgarImageLink", "ZeldaImageLink", "JupiterImageLink" }, 4)
             */
-            new LoveData("100", new string[] { "meida/alien_100.png"}, new string[] { "Mercury", "Venus" },
+            /* alien 0 */
+            new LoveData("100", new string[] { "alien_100.png"}, new string[] { "Mercury", "Venus" },
                 new string[] { 
                     "bleh bleh i have a hundred eyes",
                     "grrr.. go away you stink",
                     "do you think im funny?",
-                    "who knew someone with so few eyes could still into my heart~ <3 "},
+                    "who knew someone with so few eyes could still into my heart~ <3 " , 
+                "i hate YOOOOUUUUUU" ,
+                },
                  new string[]
                 {
                     "responce 1",
@@ -41,7 +44,7 @@ namespace AlienDatingSim
                     "responce 4"
                 }
                 )/*alien 1*/,
-                       new LoveData("100", new string[] { "meida/alien_100.png"}, new string[] { "Mercury", "Venus" },
+                       new LoveData("placeholder", new string[] {"alien_bear.png"}, new string[] { "Mercury", "Venus" },
                 new string[] {
                     "dialouge 1",
                     "dialouge 2",
@@ -68,15 +71,15 @@ namespace AlienDatingSim
         // TreeNode class to represent the structure of the game
         class TreeNode
         {
-            public string GivenData { get; set; }
+            public string[] GivenData { get; set; }
             public TreeNode Path1 { get; set; }
             public TreeNode Path2 { get; set; }
             public TreeNode Path3 { get; set; }
             public TreeNode Path4 { get; set; }
 
-            public TreeNode(string givenData)
+            public TreeNode(string data1, string data2, string data3, string data4, string data5, string data6)
             {
-                GivenData = givenData;
+                GivenData = new string[] { data1, data2, data3, data4, data5, data6 };
                 Path1 = null;
                 Path2 = null;
                 Path3 = null;
@@ -87,133 +90,46 @@ namespace AlienDatingSim
         // Initialize the game tree with generic questions and answers
         private void InitializeTree()
         {
-            root = new TreeNode("Root Node");
+            // Root node with 5 data points    -- i may have a system in which if there is something we dont wanna change, then input "" or "n/a"
+            root = new TreeNode("Root Node", "Name Data", "Character Image Data", "Planet Image Data", "TextBox Data", "Button Text Data");
 
-            // Branches for the root node
-            root.Path1 = new TreeNode("Node 1");
-            root.Path2 = new TreeNode("Node 2");
-            root.Path3 = new TreeNode("Node 3");
-            root.Path4 = new TreeNode("Node 4");
+            // Branches for the root node, each with its own data points                         /*"solarSystem"*/ /*@"C:\Users\Magic\Downloads\WorkForCollege\IGME.201\Project-3\media"*/
+            root.Path1 = new TreeNode("Node 1", "", "", "planet_mercury.png", "Now choose your Date!", "Mercury");
+            root.Path2 = new TreeNode("Node 2", "", "", "planet_mars.png"   , "Now choose your Date!", "Mars");
+            root.Path3 = new TreeNode("Node 3", "", "", "planet_saturn.png" , "Now choose your Date!", "Saturn");
+            root.Path4 = new TreeNode("Node 4", "", "", "planet_sun.png"    , "Now choose your Date!", "The Sun");
 
-            // Define further branching from Path1
-            root.Path1.Path1 = new TreeNode("Node 1.1" + loveDataArray[1]);
-            root.Path1.Path2 = new TreeNode("Node 1.2");
-            root.Path1.Path3 = new TreeNode("Node 1.3");
-            root.Path1.Path4 = new TreeNode("Node 1.4");
+            // Define further branching from Path1, each with its own data points
+            root.Path1.Path1 = new TreeNode("Node 1.1", loveDataArray[0].Name, loveDataArray[0].CharacterImageLinks[0]  , ""/*mercury background goes here*/, loveDataArray[0].Dialouges[0], loveDataArray[0].Name);
+            root.Path1.Path2 = new TreeNode("Node 1.2", loveDataArray[1].Name, loveDataArray[1].CharacterImageLinks[0]  , ""/*mercury background goes here*/, loveDataArray[0].Dialouges[1], loveDataArray[1].Name);
+            root.Path1.Path3 = new TreeNode("Node 1.3", loveDataArray[0].Name, loveDataArray[0].CharacterImageLinks[0]  , ""/*mercury background goes here*/, "Node 1.3 Data 4", "Node 1.3 Data 5");
+            root.Path1.Path4 = new TreeNode("Node 1.4", loveDataArray[0].Name, loveDataArray[0].CharacterImageLinks[0]  , ""/*mercury background goes here*/, "Node 1.4 Data 4", "Node 1.4 Data 5");
 
-            // Add additional branching under Node 1.1
-            root.Path1.Path1.Path1 = new TreeNode("Node 1.1.1" );
-            root.Path1.Path1.Path2 = new TreeNode("Node 1.1.2");
-            root.Path1.Path1.Path3 = new TreeNode("Node 1.1.3");
-            root.Path1.Path1.Path4 = new TreeNode("Node 1.1.4");
+            // Further branching from Node 1.1
+            root.Path1.Path1.Path1 = new TreeNode("Node 1.1.1", "Node 1.1.1 Data 1", "Node 1.1.1 Data 2", "Node 1.1.1 Data 3", "Node 1.1.1 Data 4", "Node 1.1.1 Data 5");
+            root.Path1.Path1.Path2 = new TreeNode("Node 1.1.2", "Node 1.1.2 Data 1", "Node 1.1.2 Data 2", "Node 1.1.2 Data 3", "Node 1.1.2 Data 4", "Node 1.1.2 Data 5");
+            root.Path1.Path1.Path3 = new TreeNode("Node 1.1.3", "Node 1.1.3 Data 1", "Node 1.1.3 Data 2", "Node 1.1.3 Data 3", "Node 1.1.3 Data 4", "Node 1.1.3 Data 5");
+            root.Path1.Path1.Path4 = new TreeNode("Node 1.1.4", "Node 1.1.4 Data 1", "Node 1.1.4 Data 2", "Node 1.1.4 Data 3", "Node 1.1.4 Data 4", "Node 1.1.4 Data 5");
 
-            // Add additional branching under Node 1.2
-            root.Path1.Path2.Path1 = new TreeNode("Node 1.2.1");
-            root.Path1.Path2.Path2 = new TreeNode("Node 1.2.2");
-            root.Path1.Path2.Path3 = new TreeNode("Node 1.2.3");
-            root.Path1.Path2.Path4 = new TreeNode("Node 1.2.4");
+            // Further branching from Node 1.2
+            root.Path1.Path2.Path1 = new TreeNode("Node 1.2.1", "Node 1.2.1 Data 1", "Node 1.2.1 Data 2", "Node 1.2.1 Data 3", "Node 1.2.1 Data 4", "Node 1.2.1 Data 5");
+            root.Path1.Path2.Path2 = new TreeNode("Node 1.2.2", "Node 1.2.2 Data 1", "Node 1.2.2 Data 2", "Node 1.2.2 Data 3", "Node 1.2.2 Data 4", "Node 1.2.2 Data 5");
+            root.Path1.Path2.Path3 = new TreeNode("Node 1.2.3", "Node 1.2.3 Data 1", "Node 1.2.3 Data 2", "Node 1.2.3 Data 3", "Node 1.2.3 Data 4", "Node 1.2.3 Data 5");
+            root.Path1.Path2.Path4 = new TreeNode("Node 1.2.4", "Node 1.2.4 Data 1", "Node 1.2.4 Data 2", "Node 1.2.4 Data 3", "Node 1.2.4 Data 4", "Node 1.2.4 Data 5");
 
-            // Add additional branching under Node 1.3
-            root.Path1.Path3.Path1 = new TreeNode("Node 1.3.1");
-            root.Path1.Path3.Path2 = new TreeNode("Node 1.3.2");
-            root.Path1.Path3.Path3 = new TreeNode("Node 1.3.3");
-            root.Path1.Path3.Path4 = new TreeNode("Node 1.3.4");
+            // Further branching from Node 1.3
+            root.Path1.Path3.Path1 = new TreeNode("Node 1.3.1", "Node 1.3.1 Data 1", "Node 1.3.1 Data 2", "Node 1.3.1 Data 3", "Node 1.3.1 Data 4", "Node 1.3.1 Data 5");
+            root.Path1.Path3.Path2 = new TreeNode("Node 1.3.2", "Node 1.3.2 Data 1", "Node 1.3.2 Data 2", "Node 1.3.2 Data 3", "Node 1.3.2 Data 4", "Node 1.3.2 Data 5");
+            root.Path1.Path3.Path3 = new TreeNode("Node 1.3.3", "Node 1.3.3 Data 1", "Node 1.3.3 Data 2", "Node 1.3.3 Data 3", "Node 1.3.3 Data 4", "Node 1.3.3 Data 5");
+            root.Path1.Path3.Path4 = new TreeNode("Node 1.3.4", "Node 1.3.4 Data 1", "Node 1.3.4 Data 2", "Node 1.3.4 Data 3", "Node 1.3.4 Data 4", "Node 1.3.4 Data 5");
 
-            // Add additional branching under Node 1.4
-            root.Path1.Path4.Path1 = new TreeNode("Node 1.4.1");
-            root.Path1.Path4.Path2 = new TreeNode("Node 1.4.2");
-            root.Path1.Path4.Path3 = new TreeNode("Node 1.4.3");
-            root.Path1.Path4.Path4 = new TreeNode("Node 1.4.4");
+            // Further branching from Node 1.4
+            root.Path1.Path4.Path1 = new TreeNode("Node 1.4.1", "Node 1.4.1 Data 1", "Node 1.4.1 Data 2", "Node 1.4.1 Data 3", "Node 1.4.1 Data 4", "Node 1.4.1 Data 5");
+            root.Path1.Path4.Path2 = new TreeNode("Node 1.4.2", "Node 1.4.2 Data 1", "Node 1.4.2 Data 2", "Node 1.4.2 Data 3", "Node 1.4.2 Data 4", "Node 1.4.2 Data 5");
+            root.Path1.Path4.Path3 = new TreeNode("Node 1.4.3", "Node 1.4.3 Data 1", "Node 1.4.3 Data 2", "Node 1.4.3 Data 3", "Node 1.4.3 Data 4", "Node 1.4.3 Data 5");
+            root.Path1.Path4.Path4 = new TreeNode("Node 1.4.4", "Node 1.4.4 Data 1", "Node 1.4.4 Data 2", "Node 1.4.4 Data 3", "Node 1.4.4 Data 4", "Node 1.4.4 Data 5");
 
-            // Define further branching from Path2
-            root.Path2.Path1 = new TreeNode("Node 2.1");
-            root.Path2.Path2 = new TreeNode("Node 2.2");
-            root.Path2.Path3 = new TreeNode("Node 2.3");
-            root.Path2.Path4 = new TreeNode("Node 2.4");
-
-            // Add additional branching under Node 2.1
-            root.Path2.Path1.Path1 = new TreeNode("Node 2.1.1");
-            root.Path2.Path1.Path2 = new TreeNode("Node 2.1.2");
-            root.Path2.Path1.Path3 = new TreeNode("Node 2.1.3");
-            root.Path2.Path1.Path4 = new TreeNode("Node 2.1.4");
-
-            // Add additional branching under Node 2.2
-            root.Path2.Path2.Path1 = new TreeNode("Node 2.2.1");
-            root.Path2.Path2.Path2 = new TreeNode("Node 2.2.2");
-            root.Path2.Path2.Path3 = new TreeNode("Node 2.2.3");
-            root.Path2.Path2.Path4 = new TreeNode("Node 2.2.4");
-
-            // Add additional branching under Node 2.3
-            root.Path2.Path3.Path1 = new TreeNode("Node 2.3.1");
-            root.Path2.Path3.Path2 = new TreeNode("Node 2.3.2");
-            root.Path2.Path3.Path3 = new TreeNode("Node 2.3.3");
-            root.Path2.Path3.Path4 = new TreeNode("Node 2.3.4");
-
-            // Add additional branching under Node 2.4
-            root.Path2.Path4.Path1 = new TreeNode("Node 2.4.1");
-            root.Path2.Path4.Path2 = new TreeNode("Node 2.4.2");
-            root.Path2.Path4.Path3 = new TreeNode("Node 2.4.3");
-            root.Path2.Path4.Path4 = new TreeNode("Node 2.4.4");
-
-            // Define further branching from Path3
-            root.Path3.Path1 = new TreeNode("Node 3.1");
-            root.Path3.Path2 = new TreeNode("Node 3.2");
-            root.Path3.Path3 = new TreeNode("Node 3.3");
-            root.Path3.Path4 = new TreeNode("Node 3.4");
-
-            // Add additional branching under Node 3.1
-            root.Path3.Path1.Path1 = new TreeNode("Node 3.1.1");
-            root.Path3.Path1.Path2 = new TreeNode("Node 3.1.2");
-            root.Path3.Path1.Path3 = new TreeNode("Node 3.1.3");
-            root.Path3.Path1.Path4 = new TreeNode("Node 3.1.4");
-
-            // Add additional branching under Node 3.2
-            root.Path3.Path2.Path1 = new TreeNode("Node 3.2.1");
-            root.Path3.Path2.Path2 = new TreeNode("Node 3.2.2");
-            root.Path3.Path2.Path3 = new TreeNode("Node 3.2.3");
-            root.Path3.Path2.Path4 = new TreeNode("Node 3.2.4");
-
-            // Add additional branching under Node 3.3
-            root.Path3.Path3.Path1 = new TreeNode("Node 3.3.1");
-            root.Path3.Path3.Path2 = new TreeNode("Node 3.3.2");
-            root.Path3.Path3.Path3 = new TreeNode("Node 3.3.3");
-            root.Path3.Path3.Path4 = new TreeNode("Node 3.3.4");
-
-            // Add additional branching under Node 3.4
-            root.Path3.Path4.Path1 = new TreeNode("Node 3.4.1");
-            root.Path3.Path4.Path2 = new TreeNode("Node 3.4.2");
-            root.Path3.Path4.Path3 = new TreeNode("Node 3.4.3");
-            root.Path3.Path4.Path4 = new TreeNode("Node 3.4.4");
-
-            // Define further branching from Path4
-            root.Path4.Path1 = new TreeNode("Node 4.1");
-            root.Path4.Path2 = new TreeNode("Node 4.2");
-            root.Path4.Path3 = new TreeNode("Node 4.3");
-            root.Path4.Path4 = new TreeNode("Node 4.4");
-
-            // Add additional branching under Node 4.1
-            root.Path4.Path1.Path1 = new TreeNode("Node 4.1.1");
-            root.Path4.Path1.Path2 = new TreeNode("Node 4.1.2");
-            root.Path4.Path1.Path3 = new TreeNode("Node 4.1.3");
-            root.Path4.Path1.Path4 = new TreeNode("Node 4.1.4");
-
-            // Add additional branching under Node 4.2
-            root.Path4.Path2.Path1 = new TreeNode("Node 4.2.1");
-            root.Path4.Path2.Path2 = new TreeNode("Node 4.2.2");
-            root.Path4.Path2.Path3 = new TreeNode("Node 4.2.3");
-            root.Path4.Path2.Path4 = new TreeNode("Node 4.2.4");
-
-            // Add additional branching under Node 4.3
-            root.Path4.Path3.Path1 = new TreeNode("Node 4.3.1");
-            root.Path4.Path3.Path2 = new TreeNode("Node 4.3.2");
-            root.Path4.Path3.Path3 = new TreeNode("Node 4.3.3");
-            root.Path4.Path3.Path4 = new TreeNode("Node 4.3.4");
-
-            // Add additional branching under Node 4.4
-            root.Path4.Path4.Path1 = new TreeNode("Node 4.4.1");
-            root.Path4.Path4.Path2 = new TreeNode("Node 4.4.2");
-            root.Path4.Path4.Path3 = new TreeNode("Node 4.4.3");
-            root.Path4.Path4.Path4 = new TreeNode("Node 4.4.4");
+            // Continue with Path2, Path3, Path4 branching as needed...
         }
 
         // Button click event to start a new game
@@ -223,7 +139,7 @@ namespace AlienDatingSim
             isEndGame = false; // Reset the end game flag
 
             btnStartGame.Visible = false; // Hide start button
-            lblTextBox.Text = $"Node: {currentNode.GivenData}"; // Show the first node
+            lblTextBox.Text = $"Node: {currentNode.GivenData[0]}"; // Show the first node
 
             // Show the options (buttons)
             UpdateButtonText();
@@ -240,10 +156,16 @@ namespace AlienDatingSim
         // Update button text based on current node
         private void UpdateButtonText()
         {
-            btnOption1.Text = currentNode.Path1?.GivenData ?? "No Path";
-            btnOption2.Text = currentNode.Path2?.GivenData ?? "No Path";
-            btnOption3.Text = currentNode.Path3?.GivenData ?? "No Path";
-            btnOption4.Text = currentNode.Path4?.GivenData ?? "No Path";
+            /*
+            btnOption1.Text = currentNode.Path1?.GivenData[0] ?? "No Path";
+            btnOption2.Text = currentNode.Path2?.GivenData[0] ?? "No Path";
+            btnOption3.Text = currentNode.Path3?.GivenData[0] ?? "No Path";
+            btnOption4.Text = currentNode.Path4?.GivenData[0] ?? "No Path";
+            */
+            btnOption1.Text = (currentNode.Path1?.GivenData[0]) + "\n" + (currentNode.Path1?.GivenData[5]) ?? "No Path";
+            btnOption2.Text = (currentNode.Path2?.GivenData[0]) + "\n" + (currentNode.Path2?.GivenData[5]) ?? "No Path";
+            btnOption3.Text = (currentNode.Path3?.GivenData[0]) + "\n" + (currentNode.Path3?.GivenData[5]) ?? "No Path";
+            btnOption4.Text = (currentNode.Path4?.GivenData[0]) + "\n" + (currentNode.Path4?.GivenData[5]) ?? "No Path";
         }
 
         // Button click event for Path 1 response
@@ -263,7 +185,7 @@ namespace AlienDatingSim
                 else
                 {
 
-                    EndGame($"You reached: {currentNode.GivenData}. Game Over!");
+                    EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -285,7 +207,7 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.GivenData}. Game Over!");
+                    EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -307,7 +229,7 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.GivenData}. Game Over!");
+                    EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -329,7 +251,7 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.GivenData}. Game Over!");
+                    EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -338,7 +260,7 @@ namespace AlienDatingSim
         // Handle the final end game response (no more "correct/incorrect" prompts)
         private void HandleEndGame()
         {
-            lblTextBox.Text = $"Game Over! You reached: {currentNode.GivenData}";
+            lblTextBox.Text = $"Game Over! You reached: {currentNode.GivenData[0]}";
 
             // Hide the option buttons at the end of the game
             ShowAnswerButtons(false);
@@ -360,7 +282,24 @@ namespace AlienDatingSim
         private void PlayGame()
         {
             // Show the current node's position and text
-            lblTextBox.Text = $"Node: {currentNode.GivenData}";
+            lblTextBox.Text =  currentNode.GivenData[4];
+            if (currentNode.GivenData[3] != "") {
+                string imagePath = currentNode.GivenData[3];
+                //pictureBox1.Image = Properties.Resources.imagePath;
+                //pictureBox1.Image = Image.FromFile(imagePath);
+                pictureBox1.ImageLocation = imagePath ;
+                pictureBox1.Load();
+            }
+
+            if (currentNode.GivenData[2] != "")
+            {
+                string imagePath = currentNode.GivenData[2];
+                //pictureBox2.Image = Properties.Resources.imagePath;
+                //pictureBox2.Image = Image.FromFile(imagePath);
+                pictureBox2.ImageLocation = imagePath;
+                pictureBox2.Load();
+            }
+
 
             // Update the button text to reflect the next node choices
             UpdateButtonText();
@@ -368,7 +307,7 @@ namespace AlienDatingSim
             if (currentNode.Path1 == null && currentNode.Path2 == null && currentNode.Path3 == null && currentNode.Path4 == null)
             {
                 // If at a leaf node, game ends
-                EndGame($"You reached: {currentNode.GivenData}. Game Over!");
+                EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                 isEndGame = true; // Set the game to end
             }
         }
@@ -398,6 +337,8 @@ namespace AlienDatingSim
         {
 
         }
+
+
     }//end public partial class Form 1 : Form
 
     // LoveData class with the specified properties
@@ -406,23 +347,23 @@ namespace AlienDatingSim
         public string Name { get; set; }
         public string[] Dialouges { get; set; }
 
-        public string[] Responces { get; set; }
-        public string[] ImageLinks { get; set; }
-        public string[] PlanetsTheyCanBeOn { get; set; }
+        public string[] ButtonText { get; set; }
+        public string[] CharacterImageLinks { get; set; }
+        public string[] PlanetImageLinks { get; set; }
 
         //public int Value { get; set; }
 
-        public LoveData(string name, string[] imageLinks, string[] planetsTheyCanBeOn, string[] dialouges, string[] responces)
+        public LoveData(string name, string[] characterImageLinks, string[] planetImageLinks, string[] dialouges, string[] buttonText)
         {
             /* Planet = planet;
              Aliens = aliens;
              ImageLinks = imageLinks;
              Value = value;*/
             Name = name;
-            ImageLinks = imageLinks;
-            PlanetsTheyCanBeOn = planetsTheyCanBeOn;
+            CharacterImageLinks = characterImageLinks;
+            PlanetImageLinks = planetImageLinks;
             Dialouges = dialouges;
-            Responces = responces;
+            ButtonText = buttonText;
 
         }
     }//end of Public class  LoveData
