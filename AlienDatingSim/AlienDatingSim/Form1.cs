@@ -177,7 +177,7 @@ namespace AlienDatingSim
         // Initialize the game tree with generic questions and answers
         private void InitializeTree()
         {
-            // Root node with 5 data points    -- i may have a system in which if there is something we dont wanna change, then input "" or "n/a"
+            // Root node with 5 data points  for the images, if we want to simply leave whatever is already in their then simply input "". 
             root = new TreeNode("Root Node", "Name Data", "Character Image Data", "Planet Image Data", "TextBox Data", "Button Text Data");
             //root = new TreeNode("Root Node", "Name Data", "Character Image Data", "Planet Image Data", "TextBox Data", "Button Text Data");
 
