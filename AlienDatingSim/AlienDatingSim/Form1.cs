@@ -20,31 +20,27 @@ namespace AlienDatingSim
 
         // Array of LoveData objects
         private LoveData[] loveDataArray = new LoveData[]
-        {   //just a mockUp
-            /*
-            new LoveData("Mars", new string[] { "Zorblatt", "Xanthe" }, new string[] { "ZorblattImageLink", "XantheImageLink", "MarsImageLink" }, 1),
-            new LoveData("Venus", new string[] { "Gravlox", "Glaxor" }, new string[] { "GravloxImageLink", "GlaxorImageLink", "VenusImageLink" }, 2),
-            new LoveData("Earth", new string[] { "Luna", "Klara" }, new string[] { "LunaImageLink", "KlaraImageLink", "EarthImageLink" }, 3),
-            new LoveData("Jupiter", new string[] { "Ogar", "Zelda" }, new string[] { "OgarImageLink", "ZeldaImageLink", "JupiterImageLink" }, 4)
-            */
+        {  
+            
             /* alien 0 */
-            new LoveData("100", new string[] { "alien_100.png"}, new string[] { "Mercury", "Venus" },
+            new LoveData(new string[]{"100" , "A many-eyed creature who likes the heat." }, new string[] { "alien_100.png"}, new string[] { "Mercury" },
                 new string[] { 
                     "bleh bleh i have a hundred eyes",
-                    "grrr.. go away you stink",
-                    "do you think im funny?",
+                    "Waaaahhhh you hate my eyes Dont You!!!!",
+                    "Aww how sweet~ ",
                     "who knew someone with so few eyes could still into my heart~ <3 " , 
-                "i hate YOOOOUUUUUU" ,
+                    "i hate YOOOOUUUUUU" ,
                 },
                  new string[]
                 {
-                    "responce 1",
-                    "responce 2",
-                    "responce 3",
-                    "responce 4"
+                    "hey there cutie, love the dress?????",
+                    "-Throw up-",
+                    "not as sweet as your heart",
+                    "jk, ur ugly"
                 }
-                )/*alien 1*/,
-                       new LoveData("placeholder", new string[] {"alien_bear.png"}, new string[] { "Mercury", "Venus" },
+                )
+            /*alien 1*/,
+                       new LoveData(new string[]{"AAAAAA" , "Actively on Fire. " }, new string[] {"alien_AAAAAA.png"}, new string[] { "The Sun" },
                 new string[] {
                     "dialouge 1",
                     "dialouge 2",
@@ -57,8 +53,99 @@ namespace AlienDatingSim
                     "responce 3",
                     "responce 4"
                 }
-                )/*alien 2*/
-        };
+                )
+            /*alien 2*/,
+                       new LoveData(new string[]{"Bear" , "The best option," }, new string[] {"alien_Bear.png"}, new string[] { "The Sun", "Mercury", "Mars" , "Saturn" },
+                new string[] {
+                    "dialouge 1",
+                    "dialouge 2",
+                    "dialouge 3",
+                    "dialouge 4 "} ,
+                new string[]
+                {
+                    "responce 1",
+                    "responce 2",
+                    "responce 3",
+                    "responce 4"
+                }
+                )
+            /*alien 3*/,
+                       new LoveData(new string[]{"Frederick" , "Is probably negging you." }, new string[] {"alien_Frederick.png"}, new string[] { "The Sun" },
+                new string[] {
+                    "dialouge 1",
+                    "dialouge 2",
+                    "dialouge 3",
+                    "dialouge 4 "} ,
+                new string[]
+                {
+                    "responce 1",
+                    "responce 2",
+                    "responce 3",
+                    "responce 4"
+                }
+                )
+            /*alien 4*/,
+                       new LoveData(new string[]{"Jern" , "Low gravity grey humanoid." }, new string[] {"alien_Jern.png"}, new string[] { "Mercury", "Mars" },
+                new string[] {
+                    "dialouge 1",
+                    "dialouge 2",
+                    "dialouge 3",
+                    "dialouge 4 "} ,
+                new string[]
+                {
+                    "responce 1",
+                    "responce 2",
+                    "responce 3",
+                    "responce 4"
+                }
+                )
+            /*alien 5*/,
+                       new LoveData(new string[]{"MarpMarp" , "A green friend who likes the cold." }, new string[] {"alien_MarpMarp.png"}, new string[] { "Mars" },
+                new string[] {
+                    "dialouge 1",
+                    "dialouge 2",
+                    "dialouge 3",
+                    "dialouge 4 "} ,
+                new string[]
+                {
+                    "responce 1",
+                    "responce 2",
+                    "responce 3",
+                    "responce 4"
+                }
+                )
+            /*alien 6*/,
+                       new LoveData(new string[]{"Olgakar" , "Some part squid, some part snake. Definitely blue, likes the cold." }, new string[] {"alien_Olgakar.png"}, new string[] { "Mars", "Saturn" },
+                new string[] {
+                    "dialouge 1",
+                    "dialouge 2",
+                    "dialouge 3",
+                    "dialouge 4 "} ,
+                new string[]
+                {
+                    "responce 1",
+                    "responce 2",
+                    "responce 3",
+                    "responce 4"
+                }
+                )
+            /*alien 7*/,
+                       new LoveData(new string[]{"SolsticeBlaze" , "Likes hot planets, hates being called a furry." }, new string[] {"alien_SolsticeBlaze.png"}, new string[] { "Mercury"},
+                new string[] {
+                    "dialouge 1",
+                    "dialouge 2",
+                    "dialouge 3",
+                    "dialouge 4 "} ,
+                new string[]
+                {
+                    "responce 1",
+                    "responce 2",
+                    "responce 3",
+                    "responce 4"
+                }
+                )
+
+        };//end of lovedata   //tally  mercury:4 , mars:4 , Saturn:2 , The Sun:3 
 
         // Constructor for the Form
         //  -- Dont touch vvvvvvv
@@ -93,41 +180,30 @@ namespace AlienDatingSim
             // Root node with 5 data points    -- i may have a system in which if there is something we dont wanna change, then input "" or "n/a"
             root = new TreeNode("Root Node", "Name Data", "Character Image Data", "Planet Image Data", "TextBox Data", "Button Text Data");
 
-            // Branches for the root node, each with its own data points                         /*"solarSystem"*/ /*@"C:\Users\Magic\Downloads\WorkForCollege\IGME.201\Project-3\media"*/
-            root.Path1 = new TreeNode("Node 1", "", "", "planet_mercury.png", "Now choose your Date!", "Mercury");
-            root.Path2 = new TreeNode("Node 2", "", "", "planet_mars.png"   , "Now choose your Date!", "Mars");
-            root.Path3 = new TreeNode("Node 3", "", "", "planet_saturn.png" , "Now choose your Date!", "Saturn");
-            root.Path4 = new TreeNode("Node 4", "", "", "planet_sun.png"    , "Now choose your Date!", "The Sun");
+            // Branches for the root node, each with its own data points                         
+            root.Path1 = new TreeNode("Node 1", "", "", "planet_mercury.png", "Now choose your Date!", "Mercury \n Mercury is an oft misunderstood terrestrial planet. Maybe by moving here you can see its true colors.");
+            root.Path2 = new TreeNode("Node 2", "", "", "planet_mars.png"   , "Now choose your Date!", "Mars \n Maybe you’re intimidated by the “Red Planet” named after the Roman god of war, but what is red if not the color of love? And blood? And rust? (hopefully you got that tetanus shot!).\r\n");
+            root.Path3 = new TreeNode("Node 3", "", "", "planet_saturn.png" , "Now choose your Date!", "Saturn \n Saturn’s most iconic feature is its dazzling system of rings…talk about “putting a ring on it”! With 146 moons in its orbit, Saturn’s “wealth” of culture truly lives up to its namesake.\r\n");
+            root.Path4 = new TreeNode("Node 4", "", "", "planet_sun.png"    , "Now choose your Date!", "The Sun \n Call yourself Icarus, because what future is brighter than one on a star. The locals here are FLAMING HOT, so why not take a chance being the center of the solar system.");
 
-            // Define further branching from Path1, each with its own data points
-            root.Path1.Path1 = new TreeNode("Node 1.1", loveDataArray[0].Name, loveDataArray[0].CharacterImageLinks[0]  , ""/*mercury background goes here*/, loveDataArray[0].Dialouges[0], loveDataArray[0].Name);
-            root.Path1.Path2 = new TreeNode("Node 1.2", loveDataArray[1].Name, loveDataArray[1].CharacterImageLinks[0]  , ""/*mercury background goes here*/, loveDataArray[0].Dialouges[1], loveDataArray[1].Name);
-            root.Path1.Path3 = new TreeNode("Node 1.3", loveDataArray[0].Name, loveDataArray[0].CharacterImageLinks[0]  , ""/*mercury background goes here*/, "Node 1.3 Data 4", "Node 1.3 Data 5");
-            root.Path1.Path4 = new TreeNode("Node 1.4", loveDataArray[0].Name, loveDataArray[0].CharacterImageLinks[0]  , ""/*mercury background goes here*/, "Node 1.4 Data 4", "Node 1.4 Data 5");
+
+            // Define further branching from Path1/ mercury, each with its own data points
+            root.Path1.Path1 = new TreeNode("Node 1.1", loveDataArray[0].Name[0], loveDataArray[0].CharacterImageLinks[0]  , ""/*<--mercury background goes there*/, loveDataArray[0].Dialouges[0], loveDataArray[0].Name[0] + "\n"+ loveDataArray[0].Name[1]);
+            root.Path1.Path2 = new TreeNode("Node 1.2", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
+            root.Path1.Path3 = new TreeNode("Node 1.3", loveDataArray[4].Name[0], loveDataArray[4].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[4].Dialouges[0], loveDataArray[4].Name[0] + "\n" + loveDataArray[4].Name[1]);
+            root.Path1.Path4 = new TreeNode("Node 1.4", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[0], loveDataArray[7].Name[0] + "\n" + loveDataArray[7].Name[1]);
 
             // Further branching from Node 1.1
+
+            // Planet: Mercury | Dating: 100
             root.Path1.Path1.Path1 = new TreeNode("Node 1.1.1", "Node 1.1.1 Data 1", "Node 1.1.1 Data 2", "Node 1.1.1 Data 3", "Node 1.1.1 Data 4", "Node 1.1.1 Data 5");
-            root.Path1.Path1.Path2 = new TreeNode("Node 1.1.2", "Node 1.1.2 Data 1", "Node 1.1.2 Data 2", "Node 1.1.2 Data 3", "Node 1.1.2 Data 4", "Node 1.1.2 Data 5");
-            root.Path1.Path1.Path3 = new TreeNode("Node 1.1.3", "Node 1.1.3 Data 1", "Node 1.1.3 Data 2", "Node 1.1.3 Data 3", "Node 1.1.3 Data 4", "Node 1.1.3 Data 5");
             root.Path1.Path1.Path4 = new TreeNode("Node 1.1.4", "Node 1.1.4 Data 1", "Node 1.1.4 Data 2", "Node 1.1.4 Data 3", "Node 1.1.4 Data 4", "Node 1.1.4 Data 5");
 
-            // Further branching from Node 1.2
-            root.Path1.Path2.Path1 = new TreeNode("Node 1.2.1", "Node 1.2.1 Data 1", "Node 1.2.1 Data 2", "Node 1.2.1 Data 3", "Node 1.2.1 Data 4", "Node 1.2.1 Data 5");
-            root.Path1.Path2.Path2 = new TreeNode("Node 1.2.2", "Node 1.2.2 Data 1", "Node 1.2.2 Data 2", "Node 1.2.2 Data 3", "Node 1.2.2 Data 4", "Node 1.2.2 Data 5");
-            root.Path1.Path2.Path3 = new TreeNode("Node 1.2.3", "Node 1.2.3 Data 1", "Node 1.2.3 Data 2", "Node 1.2.3 Data 3", "Node 1.2.3 Data 4", "Node 1.2.3 Data 5");
-            root.Path1.Path2.Path4 = new TreeNode("Node 1.2.4", "Node 1.2.4 Data 1", "Node 1.2.4 Data 2", "Node 1.2.4 Data 3", "Node 1.2.4 Data 4", "Node 1.2.4 Data 5");
 
-            // Further branching from Node 1.3
-            root.Path1.Path3.Path1 = new TreeNode("Node 1.3.1", "Node 1.3.1 Data 1", "Node 1.3.1 Data 2", "Node 1.3.1 Data 3", "Node 1.3.1 Data 4", "Node 1.3.1 Data 5");
-            root.Path1.Path3.Path2 = new TreeNode("Node 1.3.2", "Node 1.3.2 Data 1", "Node 1.3.2 Data 2", "Node 1.3.2 Data 3", "Node 1.3.2 Data 4", "Node 1.3.2 Data 5");
-            root.Path1.Path3.Path3 = new TreeNode("Node 1.3.3", "Node 1.3.3 Data 1", "Node 1.3.3 Data 2", "Node 1.3.3 Data 3", "Node 1.3.3 Data 4", "Node 1.3.3 Data 5");
-            root.Path1.Path3.Path4 = new TreeNode("Node 1.3.4", "Node 1.3.4 Data 1", "Node 1.3.4 Data 2", "Node 1.3.4 Data 3", "Node 1.3.4 Data 4", "Node 1.3.4 Data 5");
+            
 
-            // Further branching from Node 1.4
-            root.Path1.Path4.Path1 = new TreeNode("Node 1.4.1", "Node 1.4.1 Data 1", "Node 1.4.1 Data 2", "Node 1.4.1 Data 3", "Node 1.4.1 Data 4", "Node 1.4.1 Data 5");
-            root.Path1.Path4.Path2 = new TreeNode("Node 1.4.2", "Node 1.4.2 Data 1", "Node 1.4.2 Data 2", "Node 1.4.2 Data 3", "Node 1.4.2 Data 4", "Node 1.4.2 Data 5");
-            root.Path1.Path4.Path3 = new TreeNode("Node 1.4.3", "Node 1.4.3 Data 1", "Node 1.4.3 Data 2", "Node 1.4.3 Data 3", "Node 1.4.3 Data 4", "Node 1.4.3 Data 5");
-            root.Path1.Path4.Path4 = new TreeNode("Node 1.4.4", "Node 1.4.4 Data 1", "Node 1.4.4 Data 2", "Node 1.4.4 Data 3", "Node 1.4.4 Data 4", "Node 1.4.4 Data 5");
+     
+
 
             // Continue with Path2, Path3, Path4 branching as needed...
         }
@@ -283,6 +359,9 @@ namespace AlienDatingSim
         {
             // Show the current node's position and text
             lblTextBox.Text =  currentNode.GivenData[4];
+
+            
+            // location Image
             if (currentNode.GivenData[3] != "") {
                 string imagePath = currentNode.GivenData[3];
                 //pictureBox1.Image = Properties.Resources.imagePath;
@@ -291,6 +370,7 @@ namespace AlienDatingSim
                 pictureBox1.Load();
             }
 
+            // character Image 
             if (currentNode.GivenData[2] != "")
             {
                 string imagePath = currentNode.GivenData[2];
@@ -344,7 +424,7 @@ namespace AlienDatingSim
     // LoveData class with the specified properties
     public class LoveData
     {
-        public string Name { get; set; }
+        public string[] Name { get; set; }
         public string[] Dialouges { get; set; }
 
         public string[] ButtonText { get; set; }
@@ -353,7 +433,7 @@ namespace AlienDatingSim
 
         //public int Value { get; set; }
 
-        public LoveData(string name, string[] characterImageLinks, string[] planetImageLinks, string[] dialouges, string[] buttonText)
+        public LoveData(string[] name, string[] characterImageLinks, string[] planetImageLinks, string[] dialouges, string[] buttonText)
         {
             /* Planet = planet;
              Aliens = aliens;
