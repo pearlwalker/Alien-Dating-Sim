@@ -179,6 +179,7 @@ namespace AlienDatingSim
         {
             // Root node with 5 data points    -- i may have a system in which if there is something we dont wanna change, then input "" or "n/a"
             root = new TreeNode("Root Node", "Name Data", "Character Image Data", "Planet Image Data", "TextBox Data", "Button Text Data");
+            //root = new TreeNode("Root Node", "Name Data", "Character Image Data", "Planet Image Data", "TextBox Data", "Button Text Data");
 
             // Branches for the root node, each with its own data points                         
             root.Path1 = new TreeNode("Node 1", "", "", "planet_mercury.png", "Now choose your Date!", "Mercury \n Mercury is an oft misunderstood terrestrial planet. Maybe by moving here you can see its true colors.");
@@ -195,7 +196,7 @@ namespace AlienDatingSim
 
             // Further branching from Node 1.1
 
-            // Planet: Mercury | Dating: 100
+            // Planet: Mercury | Dating: 100  stick to nodes "1" and "4" when we are talking with a character
             root.Path1.Path1.Path1 = new TreeNode("Node 1.1.1", "Node 1.1.1 Data 1", "Node 1.1.1 Data 2", "Node 1.1.1 Data 3", "Node 1.1.1 Data 4", "Node 1.1.1 Data 5");
             root.Path1.Path1.Path4 = new TreeNode("Node 1.1.4", "Node 1.1.4 Data 1", "Node 1.1.4 Data 2", "Node 1.1.4 Data 3", "Node 1.1.4 Data 4", "Node 1.1.4 Data 5");
 
