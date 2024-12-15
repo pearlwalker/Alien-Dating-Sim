@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -322,6 +323,11 @@ namespace AlienDatingSim
 
             btnStartGame.Visible = false; // Hide start button
             lblTextBox.Text = $"Node: {currentNode.GivenData[0]}"; // Show the first node
+            pictureBox1.ImageLocation = "solarSystem.jpg";
+            pictureBox1.Load();
+
+            pictureBox2.Image = null ;
+            
 
             // Show the options (buttons)
             UpdateButtonText();
@@ -348,6 +354,11 @@ namespace AlienDatingSim
             btnOption2.Text = (currentNode.Path2?.GivenData[0]) + "\n" + (currentNode.Path2?.GivenData[5]) ?? "No Path";
             btnOption3.Text = (currentNode.Path3?.GivenData[0]) + "\n" + (currentNode.Path3?.GivenData[5]) ?? "No Path";
             btnOption4.Text = (currentNode.Path4?.GivenData[0]) + "\n" + (currentNode.Path4?.GivenData[5]) ?? "No Path";
+
+            if (currentNode.Path1 == null) { btnOption1.Visible = false; }
+            if (currentNode.Path2 == null) { btnOption2.Visible = false; }
+            if (currentNode.Path3 == null) { btnOption3.Visible = false; }
+            if (currentNode.Path4 == null) { btnOption4.Visible = false; }
         }
 
         // Button click event for Path 1 response
@@ -367,7 +378,7 @@ namespace AlienDatingSim
                 else
                 {
 
-                    EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
+                    //EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -389,7 +400,7 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
+                    //EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -411,7 +422,7 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
+                    //EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -433,7 +444,7 @@ namespace AlienDatingSim
                 }
                 else
                 {
-                    EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
+                    //EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                     isEndGame = true; // Set the game to end
                 }
             }
@@ -442,7 +453,7 @@ namespace AlienDatingSim
         // Handle the final end game response (no more "correct/incorrect" prompts)
         private void HandleEndGame()
         {
-            lblTextBox.Text = $"Game Over! You reached: {currentNode.GivenData[0]}";
+            //lblTextBox.Text = $"Game Over! You reached: {currentNode.GivenData[0]}";
 
             // Hide the option buttons at the end of the game
             ShowAnswerButtons(false);
@@ -493,8 +504,10 @@ namespace AlienDatingSim
             if (currentNode.Path1 == null && currentNode.Path2 == null && currentNode.Path3 == null && currentNode.Path4 == null)
             {
                 // If at a leaf node, game ends
-                EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
+                //EndGame($"You reached: {currentNode.GivenData[0]}. Game Over!");
                 isEndGame = true; // Set the game to end
+                HandleEndGame();
+                
             }
         }
 
