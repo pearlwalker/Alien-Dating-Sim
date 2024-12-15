@@ -117,31 +117,31 @@ namespace AlienDatingSim
             /*alien 6*/,
                        new LoveData(new string[]{"Olgakar" , "Some part squid, some part snake. Definitely blue, likes the cold." }, new string[] {"alien_Olgakar.png"}, new string[] { "Mars", "Saturn" },
                 new string[] {
-                    "dialouge 1",
-                    "dialouge 2",
-                    "dialouge 3",
-                    "dialouge 4 "} ,
+                    "Don’t let the tentacles intimidate you—they’re for hugs, I promise.",
+                    "Do you think my shade of blue brings out my eyes?",
+                    "I slither, I squish, and I steal hearts—what’s not to love?",
+                    "Cold climates keep my scales shiny and my tentacles wiggly"} ,
                 new string[]
                 {
-                    "responce 1",
-                    "responce 2",
-                    "responce 3",
-                    "responce 4"
+                    "Tentacle hugs? That’s a wrap—",
+                    "Your blue is stunning—it’s giving 'oceanic masterpiece.'",
+                    "Slither and squish? You’re the whole package!",
+                    "Shiny scales and wiggly tentacles? You’re practically royalty."
                 }
                 )
             /*alien 7*/,
                        new LoveData(new string[]{"SolsticeBlaze" , "Likes hot planets, hates being called a furry." }, new string[] {"alien_SolsticeBlaze.png"}, new string[] { "Mercury"},
                 new string[] {
-                    "dialouge 1",
-                    "dialouge 2",
-                    "dialouge 3",
-                    "dialouge 4 "} ,
+                    "The hotter the planet, the better the vibe. Ice? No thanks.",
+                    "I’m not a furry—just to be clear. Don’t even think about it.",
+                    "My fur isn’t for petting, it’s for style.",
+                    "If you can’t stand the heat, you’re not ready for me"} ,
                 new string[]
                 {
-                    "responce 1",
-                    "responce 2",
-                    "responce 3",
-                    "responce 4"
+                    "Hot planets? You’re bringing the heat, for sure.",
+                    "Not a furry? Got it. Just... fluffy with an edge",
+                    "you’re smoldering in the best way",
+                    "Stand the heat? Babe, I’m practically a solar flare."
                 }
                 )
 
