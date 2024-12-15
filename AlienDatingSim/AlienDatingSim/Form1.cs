@@ -196,6 +196,7 @@ namespace AlienDatingSim
 
 
             // Further branching for Alien 1 from the SUN
+            root.Path4.Path1 = new TreeNode("Node 4.1", loveDataArray[1].Name[0], loveDataArray[1].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[0].Dialouges[0], loveDataArray[0].Name[0] + "\n" + loveDataArray[0].Name[1]);
             root.Path4.Path2 = new TreeNode("Node 4.2", loveDataArray[1].Name[0], loveDataArray[1].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[1].Dialouges[0], loveDataArray[1].Name[0] + "\n" + loveDataArray[1].Name[1]);
             root.Path4.Path3 = new TreeNode("Node 4.3", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
             root.Path4.Path4 = new TreeNode("Node 4.4", loveDataArray[3].Name[0], loveDataArray[3].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[3].Dialouges[0], loveDataArray[3].Name[0] + "\n" + loveDataArray[3].Name[1]);
@@ -209,6 +210,8 @@ namespace AlienDatingSim
 
 
             // Further branching for Alien 1 from Saturn
+            root.Path3.Path1 = new TreeNode("Node 3.1", loveDataArray[1].Name[0], loveDataArray[2].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[0].Dialouges[0], loveDataArray[1].Name[0] + "\n" + loveDataArray[0].Name[1]);
+            root.Path3.Path2 = new TreeNode("Node 3.2", loveDataArray[1].Name[0], loveDataArray[2].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[1].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[1].Name[1]);
             root.Path3.Path3 = new TreeNode("Node 3.3", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
             root.Path3.Path4 = new TreeNode("Node 3.4", loveDataArray[6].Name[0], loveDataArray[6].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[6].Dialouges[0], loveDataArray[6].Name[0] + "\n" + loveDataArray[6].Name[1]);
 
