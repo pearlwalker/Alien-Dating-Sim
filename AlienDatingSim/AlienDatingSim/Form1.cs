@@ -42,16 +42,16 @@ namespace AlienDatingSim
             /*alien 1*/,
                        new LoveData(new string[]{"AAAAAA" , "Actively on Fire. " }, new string[] {"alien_AAAAAA.png"}, new string[] { "The Sun" },
                 new string[] {
-                    "dialouge 1",
-                    "dialouge 2",
-                    "dialouge 3",
-                    "dialouge 4 "} , 
+                    "Do you smell smoke? Oh wait, that's just me.",
+                    "Careful, I might ignite your heart... literally.",
+                    "Flirting with me is a bit of a hot topic, isn't it?",
+                    "not hot enough for me"} , 
                 new string[]
                 {
-                    "responce 1",
-                    "responce 2",
-                    "responce 3",
-                    "responce 4"
+                    "You’re on fire, but I’m the one burning up inside.",
+                    "Ignite my heart? More like my insurance premiums.",
+                    "Dramatic enough? Honey, you’re practically a supernova.",
+                    "id rather burn"
                 }
                 )
             /*alien 2*/,
