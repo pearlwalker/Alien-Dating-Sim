@@ -94,7 +94,7 @@ namespace AlienDatingSim
                 new string[]
                 {
                     "Light on your feet? You’re light on my heart, too",
-                    "Too grey? Nah, you’re fifty shades of charming."
+                    "Too grey? Nah, you’re fifty shades of charming.",
                     "Float my feelings? I hope they don’t drift too far.",
                     "Sweep me off my feet? I’m ready for liftoff!"
                 }
@@ -195,10 +195,11 @@ namespace AlienDatingSim
             root.Path1.Path4 = new TreeNode("Node 1.4", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[0], loveDataArray[7].Name[0] + "\n" + loveDataArray[7].Name[1]);
 
             //alien 7 dialogue (ONLY mercury)
-            root.Path1.Path4.Path1 = new TreeNode("Node 1.4.1", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[0], loveDataArray[7].Name[0] + "\n" + loveDataArray[7].Name[1]);
-            root.Path1.Path4.Path2 = new TreeNode("Node 1.4.2", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[1], loveDataArray[7].Name[0] + "\n" + loveDataArray[7].Name[1]);
-            root.Path1.Path4.Path3 = new TreeNode("Node 1.4.3", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[2], loveDataArray[7].Name[0] + "\n" + loveDataArray[7].Name[1]);
-            root.Path1.Path4.Path4 = new TreeNode("Node 1.4.4", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[3], loveDataArray[7].Name[0] + "\n" + loveDataArray[7].Name[1]);
+            root.Path1.Path4.Path1 = new TreeNode("Node 1.4.1", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[0], loveDataArray[7].ButtonText[0]) ;
+            root.Path1.Path4.Path2 = new TreeNode("Node 1.4.2", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[1], loveDataArray[7].ButtonText[1]);
+            root.Path1.Path4.Path3 = new TreeNode("Node 1.4.3", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[2], loveDataArray[7].ButtonText[2]);
+            root.Path1.Path4.Path4 = new TreeNode("Node 1.4.4", loveDataArray[7].Name[0], loveDataArray[7].CharacterImageLinks[0], ""/*<--mercury background goes there*/, loveDataArray[7].Dialouges[3], loveDataArray[7].ButtonText[3]);
+            
 
             // Further branching for Alien 1 from the SUN
             root.Path4.Path1 = new TreeNode("Node 4.1", loveDataArray[1].Name[0], loveDataArray[1].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[0].Dialouges[0], loveDataArray[0].Name[0] + "\n" + loveDataArray[0].Name[1]);
