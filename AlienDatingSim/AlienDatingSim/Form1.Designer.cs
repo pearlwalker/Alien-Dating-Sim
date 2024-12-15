@@ -65,11 +65,13 @@
             // lblTextBox
             // 
             this.lblTextBox.AutoSize = true;
-            this.lblTextBox.Location = new System.Drawing.Point(391, 307);
+            this.lblTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextBox.Location = new System.Drawing.Point(335, 287);
             this.lblTextBox.Name = "lblTextBox";
-            this.lblTextBox.Size = new System.Drawing.Size(56, 13);
+            this.lblTextBox.Size = new System.Drawing.Size(180, 18);
             this.lblTextBox.TabIndex = 2;
-            this.lblTextBox.Text = "lblTextBox";
+            this.lblTextBox.Text = "Welcome To HoneyMoon";
+            this.lblTextBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOption2
             // 
@@ -109,11 +111,12 @@
             // 
             // btnStartGame
             // 
+            this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartGame.Location = new System.Drawing.Point(12, 12);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(194, 43);
             this.btnStartGame.TabIndex = 6;
-            this.btnStartGame.Text = "btnStartGamebtnStartGame";
+            this.btnStartGame.Text = "Start";
             this.btnStartGame.UseVisualStyleBackColor = true;
             this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 

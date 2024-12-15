@@ -243,10 +243,10 @@ namespace AlienDatingSim
 
                 //MARS (2)
                 // Further branching for Aliens from Mars
-                root.Path2.Path1 = new TreeNode("Node 2.1", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], ""/*<--mars background goes there*/, loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
-                root.Path2.Path2 = new TreeNode("Node 2.2", loveDataArray[4].Name[0], loveDataArray[4].CharacterImageLinks[0], ""/*<--mars background goes there*/, loveDataArray[4].Dialouges[0], loveDataArray[4].Name[0] + "\n" + loveDataArray[4].Name[1]);
-                root.Path2.Path3 = new TreeNode("Node 2.3", loveDataArray[5].Name[0], loveDataArray[5].CharacterImageLinks[0], ""/*<--mars background goes there*/, loveDataArray[5].Dialouges[0], loveDataArray[5].Name[0] + "\n" + loveDataArray[5].Name[1]);
-                root.Path2.Path4 = new TreeNode("Node 2.4", loveDataArray[6].Name[0], loveDataArray[6].CharacterImageLinks[0], ""/*<--mars background goes there*/, loveDataArray[6].Dialouges[0], loveDataArray[6].Name[0] + "\n" + loveDataArray[6].Name[1]);
+                root.Path2.Path1 = new TreeNode("Node 2.1", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], "bg_mars.png", loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
+                root.Path2.Path2 = new TreeNode("Node 2.2", loveDataArray[4].Name[0], loveDataArray[4].CharacterImageLinks[0], "bg_mars.png", loveDataArray[4].Dialouges[0], loveDataArray[4].Name[0] + "\n" + loveDataArray[4].Name[1]);
+                root.Path2.Path3 = new TreeNode("Node 2.3", loveDataArray[5].Name[0], loveDataArray[5].CharacterImageLinks[0], "bg_mars.png", loveDataArray[5].Dialouges[0], loveDataArray[5].Name[0] + "\n" + loveDataArray[5].Name[1]);
+                root.Path2.Path4 = new TreeNode("Node 2.4", loveDataArray[6].Name[0], loveDataArray[6].CharacterImageLinks[0], "bg_mars.png", loveDataArray[6].Dialouges[0], loveDataArray[6].Name[0] + "\n" + loveDataArray[6].Name[1]);
 
                  //alien 2 dialogue (ALL planets)
                  root.Path2.Path1.Path1 = new TreeNode("Node 2.1.1", loveDataArray[2].Name[0], "", "", loveDataArray[2].Dialouges[1], loveDataArray[2].ButtonText[0]);
@@ -301,9 +301,9 @@ namespace AlienDatingSim
 
             //SUN (4)
             // Further branching for Aliens from the SUN
-            root.Path4.Path1 = new TreeNode("Node 4.1", loveDataArray[1].Name[0], loveDataArray[1].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[1].Dialouges[0], loveDataArray[1].Name[0] + "\n" + loveDataArray[1].Name[1]);
-            root.Path4.Path2 = new TreeNode("Node 4.2", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
-            root.Path4.Path4 = new TreeNode("Node 4.3", loveDataArray[3].Name[0], loveDataArray[3].CharacterImageLinks[0], ""/*<--sun background goes there*/, loveDataArray[3].Dialouges[0], loveDataArray[3].Name[0] + "\n" + loveDataArray[3].Name[1]);
+            root.Path4.Path1 = new TreeNode("Node 4.1", loveDataArray[1].Name[0], loveDataArray[1].CharacterImageLinks[0], "bg_sun.png", loveDataArray[1].Dialouges[0], loveDataArray[1].Name[0] + "\n" + loveDataArray[1].Name[1]);
+            root.Path4.Path2 = new TreeNode("Node 4.2", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], "bg_sun.png", loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
+            root.Path4.Path4 = new TreeNode("Node 4.3", loveDataArray[3].Name[0], loveDataArray[3].CharacterImageLinks[0], "bg_sun.png", loveDataArray[3].Dialouges[0], loveDataArray[3].Name[0] + "\n" + loveDataArray[3].Name[1]);
 
                  //alien 1 dialogue (SUN only)
                  root.Path4.Path1.Path1 = new TreeNode("Node 4.1.1", loveDataArray[1].Name[0], "", "", loveDataArray[1].Dialouges[1], loveDataArray[1].ButtonText[0]);
@@ -340,7 +340,7 @@ namespace AlienDatingSim
             isEndGame = false; // Reset the end game flag
 
             btnStartGame.Visible = false; // Hide start button
-            lblTextBox.Text = $"Node: {currentNode.GivenData[0]}"; // Show the first node
+            lblTextBox.Text = "Choose A Planet!"; // Show the first node
             pictureBox1.ImageLocation = "solarSystem.jpg";
             pictureBox1.Load();
 
@@ -362,16 +362,18 @@ namespace AlienDatingSim
         // Update button text based on current node
         private void UpdateButtonText()
         {
+            
+            btnOption1.Text = currentNode.Path1?.GivenData[5] ?? "No Path";
+            btnOption2.Text = currentNode.Path2?.GivenData[5] ?? "No Path";
+            btnOption3.Text = currentNode.Path3?.GivenData[5] ?? "No Path";
+            btnOption4.Text = currentNode.Path4?.GivenData[5] ?? "No Path";
+            
             /*
-            btnOption1.Text = currentNode.Path1?.GivenData[0] ?? "No Path";
-            btnOption2.Text = currentNode.Path2?.GivenData[0] ?? "No Path";
-            btnOption3.Text = currentNode.Path3?.GivenData[0] ?? "No Path";
-            btnOption4.Text = currentNode.Path4?.GivenData[0] ?? "No Path";
-            */
             btnOption1.Text = (currentNode.Path1?.GivenData[0]) + "\n" + (currentNode.Path1?.GivenData[5]) ?? "No Path";
             btnOption2.Text = (currentNode.Path2?.GivenData[0]) + "\n" + (currentNode.Path2?.GivenData[5]) ?? "No Path";
             btnOption3.Text = (currentNode.Path3?.GivenData[0]) + "\n" + (currentNode.Path3?.GivenData[5]) ?? "No Path";
             btnOption4.Text = (currentNode.Path4?.GivenData[0]) + "\n" + (currentNode.Path4?.GivenData[5]) ?? "No Path";
+            */
 
             if (currentNode.Path1 == null) { btnOption1.Visible = false; }
             if (currentNode.Path2 == null) { btnOption2.Visible = false; }
