@@ -87,16 +87,16 @@ namespace AlienDatingSim
             /*alien 4*/,
                        new LoveData(new string[]{"Jern" , "Low gravity grey humanoid." }, new string[] {"alien_Jern.png"}, new string[] { "Mercury", "Mars" },
                 new string[] {
-                    "dialouge 1",
-                    "dialouge 2",
-                    "dialouge 3",
-                    "dialouge 4 "} ,
+                    "I’m light on my feet—literally, thanks to low gravity.",
+                    "Do you think I look too grey? Be honest",
+                    "I’m a minimalist. Less gravity, less problems.",
+                    "Careful, I might just sweep you off your feet... and into orbit"} ,
                 new string[]
                 {
-                    "responce 1",
-                    "responce 2",
-                    "responce 3",
-                    "responce 4"
+                    "Light on your feet? You’re light on my heart, too",
+                    "Too grey? Nah, you’re fifty shades of charming."
+                    "Float my feelings? I hope they don’t drift too far.",
+                    "Sweep me off my feet? I’m ready for liftoff!"
                 }
                 )
             /*alien 5*/,
