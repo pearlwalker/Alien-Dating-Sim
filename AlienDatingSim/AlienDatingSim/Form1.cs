@@ -57,16 +57,16 @@ namespace AlienDatingSim
             /*alien 2*/,
                        new LoveData(new string[]{"Bear" , "The best option," }, new string[] {"alien_Bear.png"}, new string[] { "The Sun", "Mercury", "Mars" , "Saturn" },
                 new string[] {
-                    "dialouge 1",
-                    "dialouge 2",
-                    "dialouge 3",
-                    "dialouge 4 "} ,
+                    "On my planet, we hibernate together. Care to join me?",
+                    "I may be cuddly, but don’t poke the bear.",
+                    "i wood do anything furr youuu",
+                    "I brought you a picnic basket... just kidding, it’s mine"} ,
                 new string[]
                 {
-                    "responce 1",
-                    "responce 2",
-                    "responce 3",
-                    "responce 4"
+                    "RAWRR leave me alone",
+                    " That’s unbearably cute.",
+                    "Approachable? You’re practically a cosmic teddy bear.",
+                    "Picnic basket? Sharing is caring, Bear."
                 }
                 )
             /*alien 3*/,
