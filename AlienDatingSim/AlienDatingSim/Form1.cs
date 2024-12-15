@@ -2,12 +2,24 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
+using System.Security.Claims;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Collections;
+using System.Dynamic;
+using System.IO;
 
 namespace AlienDatingSim
 {
@@ -30,11 +42,11 @@ namespace AlienDatingSim
                     "Waaaahhhh you hate my eyes Dont You!!!!",
                     "Aww how sweet~ ",
                     "i hate YOOOOUUUUUU" ,
-                    "who knew someone with so few eyes could still into my heart~ <3 " 
+                    "who knew someone with so few eyes could still peer into my heart~ <3 " 
                 },
                  new string[]
                 {
-                    "-Throw up-",
+                    "urk! i think im gonna Throw Up",
                     "hey there cutie, love the dress?????",
                     "jk, ur ugly",
                     "not as sweet as your heart"
@@ -44,120 +56,142 @@ namespace AlienDatingSim
             /*alien 1*/,
                        new LoveData(new string[]{"AAAAAA" , "Actively on Fire. " }, new string[] {"alien_AAAAAA.png"}, new string[] { "The Sun" },
                 new string[] {
-                    "Do you smell smoke? Oh wait, that's just me.",
-                    "Careful, I might ignite your heart... literally.",
-                    "Flirting with me is a bit of a hot topic, isn't it?",
-                    "not hot enough for me",
-                    "dialogue 5"
+                    "I’m literally on fire—hot, dangerous, and impossible to ignore.", 
+                    "Ugh, your lack of enthusiasm is like a bucket of water on my flames.",
+                    "But I’ll admit, you’ve got a spark that’s hard to resist. ",
+                    "Seriously though, are you even capable of keeping up with this heat?",
+                    "Maybe you’re not so bad—you might just be fuel for my fire"
+
                 } , 
                 new string[]
                 {
-                    "You’re on fire, but I’m the one burning up inside.",
-                    "Ignite my heart? More like my insurance premiums.",
-                    "Dramatic enough? Honey, you’re practically a supernova.",
-                    "id rather burn"
+                    "Literally on fire? Sounds like a safety hazard",
+                    "Hot, dangerous, and impossible to ignore? That’s exactly my type.",
+                     "Fuel for your fire? Sorry, I don’t want to get burned."
+                    ,"Fuel for your fire? I’ll keep you blazing brighter than ever"
+
                 }
                 )
+
             /*alien 2*/,
                        new LoveData(new string[]{"Bear" , "The best option," }, new string[] {"alien_Bear.png"}, new string[] { "The Sun", "Mercury", "Mars" , "Saturn" },
-                new string[] {
-                    "On my planet, we hibernate together. Care to join me?",
-                    "I may be cuddly, but don’t poke the bear.",
-                    "i wood do anything furr youuu",
-                    "I brought you a picnic basket... just kidding, it’s mine",
-                "dialogue 5"} ,
+                   new string[] {
+                    "I’m cuddly, reliable, and undeniably the best option here.",
+                    "But if you don’t appreciate me, I might just hibernate forever.",
+                    "Still, you seem like someone who knows a good thing when they see it.",
+                    "Although, you could stand to show a little more gratitude.",
+                    "Fine, I’ll stick around—you’re worth a little extra effort."
+
+
+                } ,
 
                 new string[]
                 {
-                    "RAWRR leave me alone",
-                    " That’s unbearably cute.",
-                    "Approachable? You’re practically a cosmic teddy bear.",
-                    "Picnic basket? Sharing is caring, Bear."
+                "The best option? That’s a bold claim.",
+                "Cuddly and reliable? You’ve convinced me already.",
+                "Show gratitude? You’re lucky I’m still here.",
+                "Show gratitude? You’re right—I’m grateful for you."
                 }
                 )
+
             /*alien 3*/,
                        new LoveData(new string[]{"Frederick" , "Is probably negging you." }, new string[] {"alien_Frederick.png"}, new string[] { "The Sun" },
                 new string[] {
-                    "Fedrick, mediocre to meet you",
-                    "Don’t get too excited, I’m just here for the snacks",
-                    "You look... decent, I guess.",
-                    "I’ve seen better, but I’ve also seen worse",
-                    "dialogue 5"
+                "You’re tolerable, I guess. I’ve seen worse.",
+                "But honestly, you could try harder to impress me.",
+                "I’ll admit, though, you’ve got a certain charm.",
+                "Still, don’t let it go to your head—it’s not that great.",
+                "Okay, fine, you’re growing on me. Don’t make me regret saying that."
+
                 } ,
                 new string[]
                 {
-                    "I suppose you’re tolerable, for an Earthling.",
-                    "You’re lucky I’m even talking to you right now.",
-                    "Tolerable? I’ll take it. You’re almost charming.",
-                    "seems like I’m the real prize here."
+                    "Tolerable? Wow, way to make someone feel special.",
+                    "Tolerable? Coming from you, that’s high praise.",
+                    "Not that great? Maybe I’ll find someone who appreciates me.",
+                    "Not that great? You’re lucky I’m into your honesty."
+
+
                 }
                 )
+
             /*alien 4*/,
                        new LoveData(new string[]{"Jern" , "Low gravity grey humanoid." }, new string[] {"alien_Jern.png"}, new string[] { "Mercury", "Mars" },
                 new string[] {
-                    "I’m light on my feet—literally, thanks to low gravity.",
-                    "Do you think I look too grey? Be honest",
-                    "I’m a minimalist. Less gravity, less problems.",
-                    "Careful, I might just sweep you off your feet... and into orbit"
-                ,"dialogue 5"
+                "I’m light on my feet, easygoing, and low-maintenance—what’s not to love?",
+                  "Though I can’t help but notice you’re not exactly grounded.",
+                    "Still, you’ve got a way of keeping me intrigued.",
+                "But are you sure you’re ready for a partner who’s truly out of this world?",
+            	"Alright, I’m in—let’s see if you can keep up with my orbit"
+
+               
                 } ,
                 new string[]
                 {
-                    "Light on your feet? You’re light on my heart, too",
-                    "Too grey? Nah, you’re fifty shades of charming.",
-                    "Float my feelings? I hope they don’t drift too far.",
-                    "Sweep me off my feet? I’m ready for liftoff!"
+                    "Low-maintenance? Sounds boring.",
+	                "Light on your feet? You’re floating right into my heart.",
+	                "Keep up with your orbit? I’m not signing up for space drama.",
+	                "Keep up with your orbit? I’m ready for the ride."
+
                 }
                 )
+
             /*alien 5*/,
                        new LoveData(new string[]{"MarpMarp" , "A green friend who likes the cold." }, new string[] {"alien_MarpMarp.png"}, new string[] { "Mars" },
                 new string[] {
-                    "Brrr, is it chilly here, or is it just perfect?",
-                    "I’m green, but I promise I’m not envious... much.",
-                    "Do you like my icy demeanor? It’s part of my charm.",
-                    "On my planet, we cuddle for warmth. Just saying.",
-                    "dialogue 5"
+		            "I’m cool, calm, and collected—just like the icy planets I call home.",
+		            "But honestly, you’re coming off a bit… lukewarm.",
+		            "Still, there’s something refreshing about you—like a crisp winter breeze.",
+		            "Although I’m not sure you can handle my frosty side.",
+		            "Alright, I’ll let you stick around—you might just warm me up."
                 } ,
                 new string[]
                 {
-                    "Perfect? You’re as cool as they come",
-                    "Envious? I’d be jealous of me, too",
-                    "Icy demeanor? You’re melting my heart.",
-                    "Cuddle for warmth? I’m down for intergalactic snuggles."
+                    "Cool and collected? More like cold and distant.",
+             	    "Cool, calm, and collected? You’re chill in the best way.",
+		            "Your frosty side? Sounds like too much work.",
+		            "Your frosty side? I’ll bring the heat to balance us out."
                 }
                 )
+
             /*alien 6*/,
                        new LoveData(new string[]{"Olgakar" , "Some part squid, some part snake. Definitely blue, likes the cold." }, new string[] {"alien_Olgakar.png"}, new string[] { "Mars", "Saturn" },
                 new string[] {
-                    "Don’t let the tentacles intimidate you—they’re for hugs, I promise.",
-                    "Do you think my shade of blue brings out my eyes?",
-                    "I slither, I squish, and I steal hearts—what’s not to love?",
-                    "Cold climates keep my scales shiny and my tentacles wiggly",
-                "dialogue 5"
+	            "I’m a perfect blend of elegance and mystery—part squid, part snake, and all charm.",
+	            "But honestly, your warm-blooded energy is kind of off-putting.",
+	            "Still, I can’t deny that there’s something oddly captivating about you.",
+	            "Although I doubt you’d survive a dip in my icy waters.",
+	            "Alright, you’ve earned a spot in my tentacled heart—don’t let me down."
+
                 } ,
                 new string[]
                 {
-                    "Tentacle hugs? That’s a wrap—",
-                    "Your blue is stunning—it’s giving 'oceanic masterpiece.'",
-                    "Slither and squish? You’re the whole package!",
-                    "Shiny scales and wiggly tentacles? You’re practically royalty."
+	            "Part squid, part snake? Sounds like a nightmare.",
+                 "Part squid, part snake? That’s the coolest thing I’ve ever heard.",
+	            "Your icy waters? Sorry, I prefer warmer vibes.",
+	            "Your icy waters? I’ll dive in headfirst if it means staying close to you."
+
                 }
                 )
+
             /*alien 7*/,
                        new LoveData(new string[]{"SolsticeBlaze" , "Likes hot planets, hates being called a furry." }, new string[] {"alien_SolsticeBlaze.png"}, new string[] { "Mercury"},
                 new string[] {
-                    "The hotter the planet, the better the vibe. Ice? No thanks.",
-                    "I’m not a furry—just to be clear. Don’t even think about it.",
-                    "My fur isn’t for petting, it’s for style.",
-                    "If you can’t stand the heat, you’re not ready for me",
-                "dialogue 5"
+            	"I thrive on heat and passion—no cold feet or hesitation allowed.",
+	            "But seriously, if you even think about calling me a furry, we’re done.",
+            	"That said, you’ve got a certain spark that I can’t ignore.",
+            	"Although I doubt you can handle the intensity of my fiery personality.",
+	            "Fine, I’ll give you a chance—just don’t make me regret it."
+
+             
                 } ,
                 new string[]
                 {
-                    "Hot planets? You’re bringing the heat, for sure.",
-                    "Not a furry? Got it. Just... fluffy with an edge",
-                    "you’re smoldering in the best way",
-                    "Stand the heat? Babe, I’m practically a solar flare."
+                "Heat and passion? Sounds exhausting.",
+                "Heat and passion? I’m already feeling the burn—in the best way.",
+                "Fiery personality? I’m not trying to get scorched.",
+                "Fiery personality? I’ll match your flames and raise you a wildfire."
+
                 }
                 )
 

@@ -64,13 +64,12 @@
             // 
             // lblTextBox
             // 
-            this.lblTextBox.AutoSize = true;
             this.lblTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextBox.Location = new System.Drawing.Point(335, 287);
+            this.lblTextBox.Location = new System.Drawing.Point(239, 287);
             this.lblTextBox.Name = "lblTextBox";
-            this.lblTextBox.Size = new System.Drawing.Size(180, 18);
+            this.lblTextBox.Size = new System.Drawing.Size(353, 65);
             this.lblTextBox.TabIndex = 2;
-            this.lblTextBox.Text = "Welcome To HoneyMoon";
+            this.lblTextBox.Text = "Welcome To DreamLife \r\nMeet your true love amongst the cosmos";
             this.lblTextBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOption2
@@ -124,7 +123,7 @@
             // 
             this.pictureBox2.Location = new System.Drawing.Point(624, 75);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(182, 142);
+            this.pictureBox2.Size = new System.Drawing.Size(208, 166);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -143,12 +142,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnOption1);
             this.Name = "Form1";
-            this.Text = "HoneyMoon";
+            this.Text = "DreamLife";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
