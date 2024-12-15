@@ -102,16 +102,16 @@ namespace AlienDatingSim
             /*alien 5*/,
                        new LoveData(new string[]{"MarpMarp" , "A green friend who likes the cold." }, new string[] {"alien_MarpMarp.png"}, new string[] { "Mars" },
                 new string[] {
-                    "dialouge 1",
-                    "dialouge 2",
-                    "dialouge 3",
-                    "dialouge 4 "} ,
+                    "Brrr, is it chilly here, or is it just perfect?",
+                    "I’m green, but I promise I’m not envious... much.",
+                    "Do you like my icy demeanor? It’s part of my charm.",
+                    "On my planet, we cuddle for warmth. Just saying."} ,
                 new string[]
                 {
-                    "responce 1",
-                    "responce 2",
-                    "responce 3",
-                    "responce 4"
+                    "Perfect? You’re as cool as they come",
+                    "Envious? I’d be jealous of me, too",
+                    "Icy demeanor? You’re melting my heart.",
+                    "Cuddle for warmth? I’m down for intergalactic snuggles."
                 }
                 )
             /*alien 6*/,
