@@ -72,16 +72,16 @@ namespace AlienDatingSim
             /*alien 3*/,
                        new LoveData(new string[]{"Frederick" , "Is probably negging you." }, new string[] {"alien_Frederick.png"}, new string[] { "The Sun" },
                 new string[] {
-                    "dialouge 1",
-                    "dialouge 2",
-                    "dialouge 3",
-                    "dialouge 4 "} ,
+                    "Fedrick, mediocre to meet you",
+                    "Don’t get too excited, I’m just here for the snacks",
+                    "You look... decent, I guess.",
+                    "I’ve seen better, but I’ve also seen worse"} ,
                 new string[]
                 {
-                    "responce 1",
-                    "responce 2",
-                    "responce 3",
-                    "responce 4"
+                    "I suppose you’re tolerable, for an Earthling.",
+                    "You’re lucky I’m even talking to you right now.",
+                    "Tolerable? I’ll take it. You’re almost charming.",
+                    "seems like I’m the real prize here."
                 }
                 )
             /*alien 4*/,
