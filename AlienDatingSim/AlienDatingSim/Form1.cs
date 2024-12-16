@@ -36,7 +36,7 @@ namespace AlienDatingSim
         {  
             
             /* alien 0 */
-            new LoveData(new string[]{"100" , "A many-eyed creature who likes the heat." }, new string[] { "alien_100.png"}, new string[] { "Mercury" },
+            new LoveData(new string[]{"100" , "A many-eyed creature who likes the heat." }, new string[] { "../../Resources/alien_100.png"}, new string[] { "Mercury" },
                 new string[] { 
                     "bleh bleh i have a hundred eyes",
                     "Waaaahhhh you hate my eyes Dont You!!!!",
@@ -54,7 +54,7 @@ namespace AlienDatingSim
                 }
                 )
             /*alien 1*/,
-                       new LoveData(new string[]{"AAAAAA" , "Actively on Fire. " }, new string[] {"alien_AAAAAA.png"}, new string[] { "The Sun" },
+                       new LoveData(new string[]{"AAAAAA" , "Actively on Fire. " }, new string[] {"../../Resources/alien_AAAAAA.png"}, new string[] { "The Sun" },
                 new string[] {
                     "I’m literally on fire—hot, dangerous, and impossible to ignore.", 
                     "Ugh, your lack of enthusiasm is like a bucket of water on my flames.",
@@ -74,7 +74,7 @@ namespace AlienDatingSim
                 )
 
             /*alien 2*/,
-                       new LoveData(new string[]{"Bear" , "The best option," }, new string[] {"alien_Bear.png"}, new string[] { "The Sun", "Mercury", "Mars" , "Saturn" },
+                       new LoveData(new string[]{"Bear" , "The best option," }, new string[] {"../../Resources/alien_Bear.png"}, new string[] { "The Sun", "Mercury", "Mars" , "Saturn" },
                    new string[] {
                     "I’m cuddly, reliable, and undeniably the best option here.",
                     "But if you don’t appreciate me, I might just hibernate forever.",
@@ -95,7 +95,7 @@ namespace AlienDatingSim
                 )
 
             /*alien 3*/,
-                       new LoveData(new string[]{"Frederick" , "Is probably negging you." }, new string[] {"alien_Frederick.png"}, new string[] { "The Sun" },
+                       new LoveData(new string[]{"Frederick" , "Is probably negging you." }, new string[] {"../../Resources/alien_Frederick.png"}, new string[] { "The Sun" },
                 new string[] {
                 "You’re tolerable, I guess. I’ve seen worse.",
                 "But honestly, you could try harder to impress me.",
@@ -116,7 +116,7 @@ namespace AlienDatingSim
                 )
 
             /*alien 4*/,
-                       new LoveData(new string[]{"Jern" , "Low gravity grey humanoid." }, new string[] {"alien_Jern.png"}, new string[] { "Mercury", "Mars" },
+                       new LoveData(new string[]{"Jern" , "Low gravity grey humanoid." }, new string[] {"../../Resources/alien_Jern.png"}, new string[] { "Mercury", "Mars" },
                 new string[] {
                 "I’m light on my feet, easygoing, and low-maintenance—what’s not to love?",
                   "Though I can’t help but notice you’re not exactly grounded.",
@@ -137,7 +137,7 @@ namespace AlienDatingSim
                 )
 
             /*alien 5*/,
-                       new LoveData(new string[]{"MarpMarp" , "A green friend who likes the cold." }, new string[] {"alien_MarpMarp.png"}, new string[] { "Mars" },
+                       new LoveData(new string[]{"MarpMarp" , "A green friend who likes the cold." }, new string[] {"../../Resources/alien_MarpMarp.png"}, new string[] { "Mars" },
                 new string[] {
 		            "I’m cool, calm, and collected—just like the icy planets I call home.",
 		            "But honestly, you’re coming off a bit… lukewarm.",
@@ -155,7 +155,7 @@ namespace AlienDatingSim
                 )
 
             /*alien 6*/,
-                       new LoveData(new string[]{"Olgakar" , "Some part squid, some part snake. Definitely blue, likes the cold." }, new string[] {"alien_Olgakar.png"}, new string[] { "Mars", "Saturn" },
+                       new LoveData(new string[]{"Olgakar" , "Some part squid, some part snake. Definitely blue, likes the cold." }, new string[] {"../../Resources/alien_Olgakar.png"}, new string[] { "Mars", "Saturn" },
                 new string[] {
 	            "I’m a perfect blend of elegance and mystery—part squid, part snake, and all charm.",
 	            "But honestly, your warm-blooded energy is kind of off-putting.",
@@ -175,7 +175,7 @@ namespace AlienDatingSim
                 )
 
             /*alien 7*/,
-                       new LoveData(new string[]{"SolsticeBlaze" , "Likes hot planets, hates being called a furry." }, new string[] {"alien_SolsticeBlaze.png"}, new string[] { "Mercury"},
+                       new LoveData(new string[]{"SolsticeBlaze" , "Likes hot planets, hates being called a furry." }, new string[] {"../../Resources/alien_SolsticeBlaze.png"}, new string[] { "Mercury"},
                 new string[] {
             	"I thrive on heat and passion—no cold feet or hesitation allowed.",
 	            "But seriously, if you even think about calling me a furry, we’re done.",
@@ -232,10 +232,10 @@ namespace AlienDatingSim
             //root = new TreeNode("Root Node", "Name Data", "Character Image Data", "Planet Image Data", "TextBox Data", "Button Text Data");
 
             // Branches for the root node, each with its own data points                         
-            root.Path1 = new TreeNode("Node 1", "", "", "planet_mercury.png", "Now choose your Date!", "Mercury \n Mercury is an oft misunderstood terrestrial planet. Maybe by moving here you can see its true colors.");
-            root.Path2 = new TreeNode("Node 2", "", "", "planet_mars.png"   , "Now choose your Date!", "Mars \n Maybe you’re intimidated by the “Red Planet” named after the Roman god of war, but what is red if not the color of love? And blood? And rust? (hopefully you got that tetanus shot!).\r\n");
-            root.Path3 = new TreeNode("Node 3", "", "", "planet_saturn.png" , "Now choose your Date!", "Saturn \n Saturn’s most iconic feature is its dazzling system of rings…talk about “putting a ring on it”! With 146 moons in its orbit, Saturn’s “wealth” of culture truly lives up to its namesake.\r\n");
-            root.Path4 = new TreeNode("Node 4", "", "", "planet_sun.png"    , "Now choose your Date!", "The Sun \n Call yourself Icarus, because what future is brighter than one on a star. The locals here are FLAMING HOT, so why not take a chance being the center of the solar system.");
+            root.Path1 = new TreeNode("Node 1", "", "", "../../Resources/planet_mercury.png", "Now choose your Date!", "Mercury \n Mercury is an oft misunderstood terrestrial planet. Maybe by moving here you can see its true colors.");
+            root.Path2 = new TreeNode("Node 2", "", "", "../../Resources/planet_mars.png", "Now choose your Date!", "Mars \n Maybe you’re intimidated by the “Red Planet” named after the Roman god of war, but what is red if not the color of love? And blood? And rust? (hopefully you got that tetanus shot!).\r\n");
+            root.Path3 = new TreeNode("Node 3", "", "", "../../Resources/planet_saturn.png", "Now choose your Date!", "Saturn \n Saturn’s most iconic feature is its dazzling system of rings…talk about “putting a ring on it”! With 146 moons in its orbit, Saturn’s “wealth” of culture truly lives up to its namesake.\r\n");
+            root.Path4 = new TreeNode("Node 4", "", "", "../../Resources/planet_sun.png", "Now choose your Date!", "The Sun \n Call yourself Icarus, because what future is brighter than one on a star. The locals here are FLAMING HOT, so why not take a chance being the center of the solar system.");
 
 
             //MERCURY (1)
@@ -277,10 +277,10 @@ namespace AlienDatingSim
 
                 //MARS (2)
                 // Further branching for Aliens from Mars
-                root.Path2.Path1 = new TreeNode("Node 2.1", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], "bg_mars.png", loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
-                root.Path2.Path2 = new TreeNode("Node 2.2", loveDataArray[4].Name[0], loveDataArray[4].CharacterImageLinks[0], "bg_mars.png", loveDataArray[4].Dialouges[0], loveDataArray[4].Name[0] + "\n" + loveDataArray[4].Name[1]);
-                root.Path2.Path3 = new TreeNode("Node 2.3", loveDataArray[5].Name[0], loveDataArray[5].CharacterImageLinks[0], "bg_mars.png", loveDataArray[5].Dialouges[0], loveDataArray[5].Name[0] + "\n" + loveDataArray[5].Name[1]);
-                root.Path2.Path4 = new TreeNode("Node 2.4", loveDataArray[6].Name[0], loveDataArray[6].CharacterImageLinks[0], "bg_mars.png", loveDataArray[6].Dialouges[0], loveDataArray[6].Name[0] + "\n" + loveDataArray[6].Name[1]);
+                root.Path2.Path1 = new TreeNode("Node 2.1", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], "../../Resources/bg_mars.png", loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
+                root.Path2.Path2 = new TreeNode("Node 2.2", loveDataArray[4].Name[0], loveDataArray[4].CharacterImageLinks[0], "../../Resources/bg_mars.png", loveDataArray[4].Dialouges[0], loveDataArray[4].Name[0] + "\n" + loveDataArray[4].Name[1]);
+                root.Path2.Path3 = new TreeNode("Node 2.3", loveDataArray[5].Name[0], loveDataArray[5].CharacterImageLinks[0], "../../Resources/bg_mars.png", loveDataArray[5].Dialouges[0], loveDataArray[5].Name[0] + "\n" + loveDataArray[5].Name[1]);
+                root.Path2.Path4 = new TreeNode("Node 2.4", loveDataArray[6].Name[0], loveDataArray[6].CharacterImageLinks[0], "../../Resources/bg_mars.png", loveDataArray[6].Dialouges[0], loveDataArray[6].Name[0] + "\n" + loveDataArray[6].Name[1]);
 
                  //alien 2 dialogue (ALL planets)
                  root.Path2.Path1.Path1 = new TreeNode("Node 2.1.1", loveDataArray[2].Name[0], "", "", loveDataArray[2].Dialouges[1], loveDataArray[2].ButtonText[0]);
@@ -335,9 +335,9 @@ namespace AlienDatingSim
 
             //SUN (4)
             // Further branching for Aliens from the SUN
-            root.Path4.Path1 = new TreeNode("Node 4.1", loveDataArray[1].Name[0], loveDataArray[1].CharacterImageLinks[0], "bg_sun.png", loveDataArray[1].Dialouges[0], loveDataArray[1].Name[0] + "\n" + loveDataArray[1].Name[1]);
-            root.Path4.Path2 = new TreeNode("Node 4.2", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], "bg_sun.png", loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
-            root.Path4.Path4 = new TreeNode("Node 4.3", loveDataArray[3].Name[0], loveDataArray[3].CharacterImageLinks[0], "bg_sun.png", loveDataArray[3].Dialouges[0], loveDataArray[3].Name[0] + "\n" + loveDataArray[3].Name[1]);
+            root.Path4.Path1 = new TreeNode("Node 4.1", loveDataArray[1].Name[0], loveDataArray[1].CharacterImageLinks[0], "../../Resources/bg_sun.png", loveDataArray[1].Dialouges[0], loveDataArray[1].Name[0] + "\n" + loveDataArray[1].Name[1]);
+            root.Path4.Path2 = new TreeNode("Node 4.2", loveDataArray[2].Name[0], loveDataArray[2].CharacterImageLinks[0], "../../Resources/bg_sun.png", loveDataArray[2].Dialouges[0], loveDataArray[2].Name[0] + "\n" + loveDataArray[2].Name[1]);
+            root.Path4.Path4 = new TreeNode("Node 4.3", loveDataArray[3].Name[0], loveDataArray[3].CharacterImageLinks[0], "../../Resources/bg_sun.png", loveDataArray[3].Dialouges[0], loveDataArray[3].Name[0] + "\n" + loveDataArray[3].Name[1]);
 
                  //alien 1 dialogue (SUN only)
                  root.Path4.Path1.Path1 = new TreeNode("Node 4.1.1", loveDataArray[1].Name[0], "", "", loveDataArray[1].Dialouges[1], loveDataArray[1].ButtonText[0]);
@@ -375,7 +375,7 @@ namespace AlienDatingSim
 
             btnStartGame.Visible = false; // Hide start button
             lblTextBox.Text = "Choose A Planet!"; // Show the first node
-            pictureBox1.ImageLocation = "solarSystem.jpg";
+            pictureBox1.ImageLocation = "../../Resources/solarSystem.jpg";
             pictureBox1.Load();
 
             pictureBox2.Image = null ;
